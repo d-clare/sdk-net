@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		CODEOWNERS = CODEOWNERS
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		MAINTAINERS.md = MAINTAINERS.md
+		README.md = README.md
+		SECURITY.md = SECURITY.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{14BFCDF2-B34F-4F78-8D8A-4DD350BC8C5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{8B3B1795-316A-49BC-BCBB-470E597B2D0C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{12BB6B9A-FAA7-4477-8428-61BC3E7D8507}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+		.github\workflows\test.yml = .github\workflows\test.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{D2DB80EC-AECE-4B8A-88D0-C37331948531}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug.yml = .github\ISSUE_TEMPLATE\bug.yml
+		.github\ISSUE_TEMPLATE\config.yml = .github\ISSUE_TEMPLATE\config.yml
+		.github\ISSUE_TEMPLATE\feature.yml = .github\ISSUE_TEMPLATE\feature.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DClare.Sdk", "src\DClare.Sdk\DClare.Sdk.csproj", "{4A1F857E-B204-408B-B277-41DA0BA032EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{11DE6734-28A5-43F7-A04A-5179D25F4D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DClare.Sdk.UnitTests", "tests\DClare.Sdk.UnitTests\DClare.Sdk.UnitTests.csproj", "{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A1F857E-B204-408B-B277-41DA0BA032EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1F857E-B204-408B-B277-41DA0BA032EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1F857E-B204-408B-B277-41DA0BA032EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1F857E-B204-408B-B277-41DA0BA032EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12BB6B9A-FAA7-4477-8428-61BC3E7D8507} = {8B3B1795-316A-49BC-BCBB-470E597B2D0C}
+		{D2DB80EC-AECE-4B8A-88D0-C37331948531} = {8B3B1795-316A-49BC-BCBB-470E597B2D0C}
+		{4A1F857E-B204-408B-B277-41DA0BA032EA} = {14BFCDF2-B34F-4F78-8D8A-4DD350BC8C5A}
+		{EBAA03C7-A9F8-497F-A173-BFB07C1F6E93} = {11DE6734-28A5-43F7-A04A-5179D25F4D11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {486853C9-CF97-4842-94CF-5E92211D7CBC}
+	EndGlobalSection
+EndGlobal
