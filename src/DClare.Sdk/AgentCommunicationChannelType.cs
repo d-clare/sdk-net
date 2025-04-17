@@ -14,19 +14,15 @@
 namespace DClare.Sdk;
 
 /// <summary>
-/// Enumerates all types of agents
+/// Enumerates all types of agent communication channels
 /// </summary>
-public static class AgentType
+public static class AgentCommunicationChannelType
 {
 
     /// <summary>
-    /// Indicates a fully defined, locally hosted agent whose behavior and capabilities are described inline
+    /// Indicates a channel using the Agent2Agent protocol
     /// </summary>
-    public const string Hosted = "hosted";
-    /// <summary>
-    /// Indicates a remote agent referenced via an external endpoint
-    /// </summary>
-    public const string Remote = "remote";
+    public const string A2A = "a2a";
 
     /// <summary>
     /// Gets an <see cref="IEnumerable{T}"/> containing all supported values
@@ -34,8 +30,7 @@ public static class AgentType
     /// <returns>A new <see cref="IEnumerable{T}"/></returns>
     public static IEnumerable<string> AsEnumerable()
     {
-        yield return Hosted;
-        yield return Remote;
+        yield return A2A;
     }
 
 }
