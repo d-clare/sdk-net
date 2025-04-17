@@ -21,10 +21,18 @@ public record A2AChannelConfiguration
 {
 
     /// <summary>
-    /// Gets/sets the remote agent's A2A endpoint
+    /// Gets/sets the endpoint of the remote host used to perform A2A agent discovery<para></para>
+    /// This is not the agent’s direct message endpoint, but rather the host through which the agent is resolved
     /// </summary>
     [Required]
     [DataMember(Name = "endpoint", Order = 1), JsonPropertyName("endpoint"), JsonPropertyOrder(1), YamlMember(Alias = "endpoint", Order = 1)]
     public virtual EndpointDefinition Endpoint { get; set; } = null!;
+
+    /// <summary>
+    /// Gets/sets the name or identifier of the remote agent to select from the A2A discovery endpoint, in case multiple agents are available at the same host
+    /// </summary>
+    [Required]
+    [DataMember(Name = "name", Order = 2), JsonPropertyName("name"), JsonPropertyOrder(2), YamlMember(Alias = "name", Order = 2)]
+    public virtual string? Name { get; set; }
 
 }
