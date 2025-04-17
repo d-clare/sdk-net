@@ -25,6 +25,6 @@ public record RemoteAgentDefinition
     /// </summary>
     [Required]
     [DataMember(Name = "channel", Order = 1), JsonPropertyName("channel"), JsonPropertyOrder(1), YamlMember(Alias = "channel", Order = 1)]
-    public virtual RemoteAgentCommunicationChannelDefinition Channel { get; set; } = null!;
+    public virtual AgentCommunicationChannelDefinition Channel { get; set; } = null!;
 
 }

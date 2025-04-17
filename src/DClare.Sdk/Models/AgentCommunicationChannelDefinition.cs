@@ -17,7 +17,7 @@ namespace DClare.Sdk.Models;
 /// Represents the definition of protocol-specific configuration options for communicating with a remote agent
 /// </summary>
 [DataContract]
-public record RemoteAgentCommunicationChannelDefinition
+public record AgentCommunicationChannelDefinition
 {
 
     /// <summary>
@@ -25,5 +25,11 @@ public record RemoteAgentCommunicationChannelDefinition
     /// </summary>
     [DataMember(Name = "a2a", Order = 1), JsonPropertyName("a2a"), JsonPropertyOrder(1), YamlMember(Alias = "a2a", Order = 1)]
     public virtual A2AChannelConfiguration? A2A { get; set; }
+
+    /// <summary>
+    /// Gets the agent's type
+    /// </summary>
+    [IgnoreDataMember, JsonIgnore, YamlIgnore]
+    public virtual string Type => A2A != null ? AgentCommunicationChannelType.A2A : null!;
 
 }
