@@ -1,0 +1,268 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="enums\agent-communication-channel-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\AgentCommunicationChannelType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\agent-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\AgentType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\agentic-process-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\AgenticProcessType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\authentication-parameter-placement-location.ts">
+      <CustomToolNamespace>..\DClare.Sdk\AuthenticationParameterPlacementLocation.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\authentication-scheme.ts">
+      <CustomToolNamespace>..\DClare.Sdk\AuthenticationScheme.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\d-clare-defaults.ts">
+      <CustomToolNamespace>..\DClare.Sdk\DClareDefaults.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\embedding-model-provider.ts">
+      <CustomToolNamespace>..\DClare.Sdk\EmbeddingModelProvider.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\key-value-memory-provider.ts">
+      <CustomToolNamespace>..\DClare.Sdk\KeyValueMemoryProvider.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\mcp-protocol-version.ts">
+      <CustomToolNamespace>..\DClare.Sdk\McpProtocolVersion.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\mcp-transport-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\McpTransportType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\memory-injection-position.ts">
+      <CustomToolNamespace>..\DClare.Sdk\MemoryInjectionPosition.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\memory-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\MemoryType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\naming-convention.ts">
+      <CustomToolNamespace>..\DClare.Sdk\NamingConvention.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\o-auth2-client-authentication-method.ts">
+      <CustomToolNamespace>..\DClare.Sdk\OAuth2ClientAuthenticationMethod.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\o-auth2-grant-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\OAuth2GrantType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\o-auth2-request-encoding.ts">
+      <CustomToolNamespace>..\DClare.Sdk\OAuth2RequestEncoding.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\reasoning-model-provider.ts">
+      <CustomToolNamespace>..\DClare.Sdk\ReasoningModelProvider.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\semantic-version.ts">
+      <CustomToolNamespace>..\DClare.Sdk\SemanticVersion.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\toolset-type.ts">
+      <CustomToolNamespace>..\DClare.Sdk\ToolsetType.cs</CustomToolNamespace>
+    </None>
+    <None Update="enums\vector-memory-provider.ts">
+      <CustomToolNamespace>..\DClare.Sdk\VectorMemoryProvider.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\a2a-channel-configuration.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\A2AChannelConfiguration.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-communication-channel-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentCommunicationChannelDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-capability-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryCapabilityDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-entry-metadata-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryEntryMetadataDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-format-options.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryFormatOptions.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-injection-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryInjectionStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-metadata-resolution-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryMetadataResolutionStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-search-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemorySearchDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-storage-policy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemoryStoragePolicyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-memory-synthetization-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentMemorySynthetizationStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agent-skill-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgentSkillDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\agentic-process-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AgenticProcessDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\api-key-authentication-scheme-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\ApiKeyAuthenticationSchemeDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\authentication-parameter-placement-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\AuthenticationParameterPlacementDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\authentication-policy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AuthenticationPolicyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\authentication-scheme-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\AuthenticationSchemeDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\bearer-authentication-scheme-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\BearerAuthenticationSchemeDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\collaboration-agentic-process-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Processes\CollaborationAgenticProcessDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\collaboration-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\CollaborationStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\component-collection-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ComponentCollectionDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\component-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ComponentDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\convergence-agentic-process-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Processes\ConvergenceAgenticProcessDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\convergence-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ConvergenceStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\decomposition-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\DecompositionStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\duration.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Duration.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\embedding-capability-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\EmbeddingCapabilityDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\endpoint-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\EndpointDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\external-resource-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ExternalResourceDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\file-memory-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\FileMemoryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\hosted-agent-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\HostedAgentDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\input-variable-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\InputVariableDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\kernel-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\KernelDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\kernel-function-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\KernelFunctionDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\kernel-function-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\KernelFunctionStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\key-value-memory-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\KeyValueMemoryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-client-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpClientDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-client-implementation-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpClientImplementationDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-http-transport-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpHttpTransportDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-stdio-transport-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpStdioTransportDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-toolset-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpToolsetDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\mcp-transport-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\McpTransportDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\memory-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\MemoryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\memory-entry-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\MemoryEntryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\memory-entry-metadata.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\MemoryEntryMetadata.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-authentication-client-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2AuthenticationClientDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-authentication-endpoints-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2AuthenticationEndpointsDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-authentication-request-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2AuthenticationRequestDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-authentication-scheme-definition-base.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2AuthenticationSchemeDefinitionBase.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-authentication-scheme-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2AuthenticationSchemeDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\o-auth2-token-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OAuth2TokenDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\open-api-toolset-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\OpenApiToolsetDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\open-id-connect-scheme-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Authentication\OpenIDConnectSchemeDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\output-variable-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\OutputVariableDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\prompt-template-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\PromptTemplateDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\reasoning-capability-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ReasoningCapabilityDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\referenceable-component-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ReferenceableComponentDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\remote-agent-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\RemoteAgentDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\runtime-capability-api-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\RuntimeCapabilityApiDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\selection-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Processes\SelectionStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\static-memory-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\StaticMemoryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\synthesis-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\SynthesisStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\termination-strategy-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\Processes\TerminationStrategyDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\toolset-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\ToolsetDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\vector-memory-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\VectorMemoryDefinition.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\workflow-definition-metadata.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\WorkflowDefinitionMetadata.cs</CustomToolNamespace>
+    </None>
+    <None Update="models\workflow-definition.ts">
+      <CustomToolNamespace>..\DClare.Sdk\Models\WorkflowDefinition.cs</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+</Project>
