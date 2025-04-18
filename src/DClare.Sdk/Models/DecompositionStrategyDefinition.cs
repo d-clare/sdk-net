@@ -22,23 +22,23 @@ public record DecompositionStrategyDefinition
 {
 
     /// <summary>
-    /// Gets the default name of the variable used to store the prompt to split into agent-specific subprompts
+    /// Gets the default name of the variable used to store the prompt to split into agent-specific sub-prompts
     /// </summary>
     public const string DefaultPromptVariableName = "prompt";
     /// <summary>
-    /// Gets the default name of the variable used to store the agents to tailor subprompts for
+    /// Gets the default name of the variable used to store the agents to tailor sub-prompts for
     /// </summary>
     public const string DefaultAgentsVariableName = "agents";
 
     /// <summary>
-    /// Gets/sets the name of the variable used to store the agents to tailor subprompts for
+    /// Gets/sets the name of the variable used to store the prompt to decompose
     /// </summary>
     [Required, MinLength(1)]
     [DataMember(Name = "promptVariableName", Order = 1), JsonPropertyName("promptVariableName"), JsonPropertyOrder(1), YamlMember(Alias = "promptVariableName", Order = 1)]
     public virtual string PromptVariableName { get; set; } = DefaultPromptVariableName;
 
     /// <summary>
-    /// Gets/sets the name of the variable used to store the agents to tailor subprompts for
+    /// Gets/sets the name of the variable used to store the agents to tailor sub-prompts for
     /// </summary>
     [Required, MinLength(1)]
     [DataMember(Name = "agentsVariableName", Order = 2), JsonPropertyName("agentsVariableName"), JsonPropertyOrder(2), YamlMember(Alias = "agentsVariableName", Order = 2)]

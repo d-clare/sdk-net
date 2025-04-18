@@ -48,6 +48,6 @@ public record MemoryEntryMetadata
     /// Gets/sets additional arbitrary key-value data, if any, associated to the memory entry
     /// </summary>
     [DataMember(Name = "properties", Order = 5), JsonPropertyName("properties"), JsonPropertyOrder(5), YamlMember(Alias = "properties", Order = 5)]
-    public virtual EquatableDictionary<string, string>? Properties { get; set; }
+    public virtual EquatableDictionary<string, object>? Properties { get; set; }
 
 }

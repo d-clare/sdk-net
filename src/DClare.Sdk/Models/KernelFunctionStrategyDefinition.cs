@@ -20,12 +20,17 @@ namespace DClare.Sdk.Models;
 public record KernelFunctionStrategyDefinition
 {
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets/sets the kernel function to use
+    /// </summary>
     [Required]
     [DataMember(Name = "function", Order = 1), JsonPropertyName("function"), JsonPropertyOrder(1), YamlMember(Alias = "function", Order = 1)]
     public virtual KernelFunctionDefinition Function { get; set; } = null!;
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Gets/sets the kernel used to invoke the function
+    /// </summary>
+    [Required]
     [DataMember(Name = "kernel", Order = 2), JsonPropertyName("kernel"), JsonPropertyOrder(2), YamlMember(Alias = "kernel", Order = 2)]
     public virtual KernelDefinition Kernel { get; set; } = null!;
 

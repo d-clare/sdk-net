@@ -29,7 +29,7 @@ public record MemoryDefinition
     /// <summary>
     /// Gets/sets the definition of a key-value store memory that retrieves entries based on keys or tags
     /// </summary>
-    [DataMember(Name = "Keyvalue", Order = 1), JsonPropertyName("Keyvalue"), JsonPropertyOrder(1), YamlMember(Alias = "Keyvalue", Order = 1)]
+    [DataMember(Name = "keyvalue", Order = 1), JsonPropertyName("keyvalue"), JsonPropertyOrder(1), YamlMember(Alias = "keyvalue", Order = 1)]
     public virtual KeyValueMemoryDefinition? KeyValue { get; set; }
 
     /// <summary>
