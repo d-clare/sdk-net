@@ -28,7 +28,7 @@ public record MemoryEntryDefinition
     public virtual string Content { get; set; } = null!;
 
     /// <summary>
-    /// Gets/sets a list of tags associated with the memory entry
+    /// Gets/sets the metadata, if any, used to describe the memory entry
     /// </summary>
     [DataMember(Name = "metadata", Order = 2), JsonPropertyName("metadata"), JsonPropertyOrder(2), YamlMember(Alias = "metadata", Order = 2)]
     public virtual MemoryEntryMetadata? Metadata { get; set; }

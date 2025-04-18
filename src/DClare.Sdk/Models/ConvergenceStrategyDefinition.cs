@@ -29,8 +29,7 @@ public record ConvergenceStrategyDefinition
     /// <summary>
     /// Gets/sets the kernel function strategy used to synthesize the individual agent responses into a single, unified output
     /// </summary>
-    [Required]
     [DataMember(Name = "synthesis", Order = 2), JsonPropertyName("synthesis"), JsonPropertyOrder(2), YamlMember(Alias = "synthesis", Order = 2)]
-    public virtual SynthesisStrategyDefinition Synthesis { get; set; } = null!;
+    public virtual SynthesisStrategyDefinition? Synthesis { get; set; }
 
 }

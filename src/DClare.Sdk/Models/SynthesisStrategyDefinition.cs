@@ -14,7 +14,7 @@
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents a kernel function strategy responsible for combining agent responses to their respective sub-prompts into a single synthesized result
+/// Represents a kernel function strategy responsible for combining inputs into a single synthesized result
 /// </summary>
 [DataContract]
 public record SynthesisStrategyDefinition
@@ -22,15 +22,15 @@ public record SynthesisStrategyDefinition
 {
 
     /// <summary>
-    /// Gets the default variable name used to pass the collection of agent responses to the synthesis function
+    /// Gets the default variable name used to pass the collection of inputs to the synthesis function
     /// </summary>
-    public const string DefaultResponsesVariableName = "responses";
+    public const string DefaultInputsVariableName = "inputs";
 
     /// <summary>
-    /// Gets/sets the variable name used to pass the collection of agent responses to the synthesis function
+    /// Gets/sets the variable name used to pass the collection of inputs to the synthesis function
     /// </summary>
     [Required, MinLength(1)]
-    [DataMember(Name = "responsesVariableName", Order = 1), JsonPropertyName("responsesVariableName"), JsonPropertyOrder(1), YamlMember(Alias = "responsesVariableName", Order = 1)]
-    public virtual string ResponsesVariableName { get; set; } = DefaultResponsesVariableName;
+    [DataMember(Name = "inputsVariableName", Order = 1), JsonPropertyName("inputsVariableName"), JsonPropertyOrder(1), YamlMember(Alias = "inputsVariableName", Order = 1)]
+    public virtual string InputsVariableName { get; set; } = DefaultInputsVariableName;
 
 }

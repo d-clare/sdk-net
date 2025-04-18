@@ -14,10 +14,11 @@
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents the definition of a kernel function
+/// Represents the definition of kernel-backed function that performs reasoning, transformation, or decision-making. Kernel functions encapsulate prompt templates and model-specific configuration, and are invoked by agents or processes to execute structured tasks
 /// </summary>
 [DataContract]
 public record KernelFunctionDefinition
+    : ReferenceableComponentDefinition
 {
 
     /// <summary>

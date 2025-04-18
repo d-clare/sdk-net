@@ -28,7 +28,7 @@ public record CollaborationAgenticProcessDefinition
     public virtual EquatableDictionary<string, AgentDefinition> Agents { get; set; } = [];
 
     /// <summary>
-    /// Gets/sets the definition of the collaboration process's strategy, if any
+    /// Gets/sets the definition of the collaboration process's strategy
     /// </summary>
     [Required]
     [DataMember(Name = "strategy", Order = 2), JsonPropertyName("strategy"), JsonPropertyOrder(2), YamlMember(Alias = "strategy", Order = 2)]

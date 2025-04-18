@@ -29,7 +29,7 @@ public record A2AChannelConfiguration
     public virtual EndpointDefinition Endpoint { get; set; } = null!;
 
     /// <summary>
-    /// Gets/sets the name or identifier of the remote agent to select from the A2A discovery endpoint, in case multiple agents are available at the same host
+    /// Gets/sets the name of the remote agent to select from the A2A discovery endpoint, in case multiple agents are available at the same host
     /// </summary>
     [Required]
     [DataMember(Name = "name", Order = 2), JsonPropertyName("name"), JsonPropertyOrder(2), YamlMember(Alias = "name", Order = 2)]

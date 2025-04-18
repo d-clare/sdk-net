@@ -23,6 +23,7 @@ public record McpHttpTransportDefinition
     /// <summary>
     /// Gets/sets the endpoint at which to get the defined resource
     /// </summary>
+    [Required]
     [DataMember(Name = "endpoint", Order = 1), JsonInclude, JsonPropertyName("endpoint"), JsonPropertyOrder(1), YamlMember(Alias = "endpoint", Order = 1)]
     public virtual EndpointDefinition Endpoint { get; set; } = null!;
 

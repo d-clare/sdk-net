@@ -34,7 +34,7 @@ internal static class ConvergenceAgenticProcessDefinitionFactory
             },
             Synthesis = new()
             {
-                ResponsesVariableName = "responses",
+                InputsVariableName = "responses",
                 Function = KernelFunctionDefinitionFactory.Create(),
                 Kernel = KernelDefinitionFactory.Create()
             }

@@ -14,22 +14,22 @@
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents the definition of the API used by a kernel capability
+/// Represents the definition of an runtime capability API endpoint
 /// </summary>
 [DataContract]
-public record RuntimeCapabilityApiDefinition
+public record RuntimeCapabilityApiEndpointDefinition
 {
 
     /// <summary>
-    /// Gets/sets the API's endpoint
+    /// Gets/sets the endpoint's uri
     /// </summary>
-    [DataMember(Name = "endpoint", Order = 1), JsonPropertyName("endpoint"), JsonPropertyOrder(1), YamlMember(Alias = "endpoint", Order = 1)]
-    public virtual RuntimeCapabilityApiEndpointDefinition? Endpoint { get; set; }
+    [DataMember(Name = "uri", Order = 1), JsonPropertyName("uri"), JsonPropertyOrder(1), YamlMember(Alias = "uri", Order = 1)]
+    public required virtual Uri? Uri { get; set; }
 
     /// <summary>
-    /// Gets/sets a key/value mapping of the additional properties required, if any, to configure the API
+    /// Gets/sets the endpoint's authentication policy, if any
     /// </summary>
-    [DataMember(Name = "properties", Order = 2), JsonPropertyName("properties"), JsonPropertyOrder(2), YamlMember(Alias = "properties", Order = 2)]
-    public virtual EquatableDictionary<string, object>? Properties { get; set; }
+    [DataMember(Name = "authentication", Order = 2), JsonPropertyName("authentication"), JsonPropertyOrder(2), YamlMember(Alias = "authentication", Order = 2)]
+    public virtual AuthenticationPolicyDefinition? Authentication { get; set; }
 
 }
