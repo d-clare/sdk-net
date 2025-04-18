@@ -2,10 +2,10 @@
 
 **Official .NET SDK for building, coordinating, and executing intelligent agents using the DClare DSL.**
 
+[![License](https://img.shields.io/github/license/d-clare/sdk-net)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/d-clare/sdk-net/test.yml?branch=main)](https://github.com/d-clare/sdk-net/actions)
 [![Release](https://img.shields.io/github/v/release/d-clare/sdk-net?include_prereleases)](https://github.com/d-clare/sdk-net/releases)
 [![NuGet](https://img.shields.io/nuget/v/DClare.Sdk.svg)](https://nuget.org/packages/DClare.Sdk)
-[![License](https://img.shields.io/github/license/d-clare/sdk-net)](LICENSE)
 [<img src="http://img.shields.io/badge/Website-blue?style=flat&logo=google-chrome&logoColor=white">](https://d-clare.ai/) 
 [<img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white">](https://www.linkedin.com/company/d-clare/)
 ---
