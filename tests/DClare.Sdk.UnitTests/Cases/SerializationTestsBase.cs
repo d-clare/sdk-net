@@ -56,21 +56,6 @@ public abstract class SerializationTestsBase<TSerializer>
     }
 
     [Fact]
-    public void Serialize_Deserialize_AgenticProcessDefinition_Should_Work()
-    {
-        //arrange
-        var toSerialize = AgenticProcessDefinitionFactory.CreateConvergence();
-
-        //act
-        var serialized = Serializer.SerializeToText(toSerialize);
-        var deserialized = Serializer.Deserialize<AgenticProcessDefinition>(serialized);
-
-        //assert
-        deserialized.Should().NotBeNull();
-        deserialized.Should().BeEquivalentTo(deserialized);
-    }
-
-    [Fact]
     public void Serialize_Deserialize_AgentSkillDefinition_Should_Work()
     {
         //arrange
@@ -79,6 +64,21 @@ public abstract class SerializationTestsBase<TSerializer>
         //act
         var serialized = Serializer.SerializeToText(toSerialize);
         var deserialized = Serializer.Deserialize<AgentSkillDefinition>(serialized);
+
+        //assert
+        deserialized.Should().NotBeNull();
+        deserialized.Should().BeEquivalentTo(deserialized);
+    }
+
+    [Fact]
+    public void Serialize_Deserialize_AgentInterfaceDefinition_Should_Work()
+    {
+        //arrange
+        var toSerialize = AgentInterfaceDefinitionFactory.CreateHosted();
+
+        //act
+        var serialized = Serializer.SerializeToText(toSerialize);
+        var deserialized = Serializer.Deserialize<AgentInterfaceDefinition>(serialized);
 
         //assert
         deserialized.Should().NotBeNull();
@@ -240,6 +240,41 @@ public abstract class SerializationTestsBase<TSerializer>
     }
 
     [Fact]
+    public void Serialize_Deserialize_Manifest_Should_Work()
+    {
+        //arrange
+        var toSerialize = new Manifest()
+        {
+            Metadata = ManifestMetadataFactory.Create(),
+            Components = ComponentCollectionDefinitionFactory.Create(),
+            Interfaces = InterfaceCollectionDefinitionFactory.Create()
+        };
+
+        //act
+        var serialized = Serializer.SerializeToText(toSerialize);
+        var deserialized = Serializer.Deserialize<Manifest>(serialized);
+
+        //assert
+        deserialized.Should().NotBeNull();
+        deserialized.Should().BeEquivalentTo(deserialized);
+    }
+
+    [Fact]
+    public void Serialize_Deserialize_ManifestMetadata_Should_Work()
+    {
+        //arrange
+        var toSerialize = ManifestMetadataFactory.Create();
+
+        //act
+        var serialized = Serializer.SerializeToText(toSerialize);
+        var deserialized = Serializer.Deserialize<ManifestMetadata>(serialized);
+
+        //assert
+        deserialized.Should().NotBeNull();
+        deserialized.Should().BeEquivalentTo(deserialized);
+    }
+
+    [Fact]
     public void Serialize_Deserialize_McpToolsetDefinition_Should_Work()
     {
         //arrange
@@ -263,6 +298,36 @@ public abstract class SerializationTestsBase<TSerializer>
         //act
         var serialized = Serializer.SerializeToText(toSerialize);
         var deserialized = Serializer.Deserialize<OpenApiToolsetDefinition>(serialized);
+
+        //assert
+        deserialized.Should().NotBeNull();
+        deserialized.Should().BeEquivalentTo(deserialized);
+    }
+
+    [Fact]
+    public void Serialize_Deserialize_ProcessDefinition_Should_Work()
+    {
+        //arrange
+        var toSerialize = ProcessDefinitionFactory.CreateConvergence();
+
+        //act
+        var serialized = Serializer.SerializeToText(toSerialize);
+        var deserialized = Serializer.Deserialize<ProcessDefinition>(serialized);
+
+        //assert
+        deserialized.Should().NotBeNull();
+        deserialized.Should().BeEquivalentTo(deserialized);
+    }
+
+    [Fact]
+    public void Serialize_Deserialize_ProcessInterfaceDefinition_Should_Work()
+    {
+        //arrange
+        var toSerialize = ProcessInterfaceDefinitionFactory.CreateCollaboration();
+
+        //act
+        var serialized = Serializer.SerializeToText(toSerialize);
+        var deserialized = Serializer.Deserialize<ProcessInterfaceDefinition>(serialized);
 
         //assert
         deserialized.Should().NotBeNull();

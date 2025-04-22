@@ -31,7 +31,7 @@ public record McpClientDefinition
     /// Gets/sets the version of the MCP protocol to use
     /// </summary>
     [Required, DefaultValue(McpProtocolVersion.v20241105)]
-    [DataMember(Name = "protocolVersion", Order = 1), JsonPropertyName("protocolVersion"), JsonPropertyOrder(1), YamlMember(Alias = "protocolVersion", Order = 1)]
+    [DataMember(Name = "protocolVersion", Order = 2), JsonPropertyName("protocolVersion"), JsonPropertyOrder(2), YamlMember(Alias = "protocolVersion", Order = 2, ScalarStyle = ScalarStyle.SingleQuoted)]
     public virtual string ProtocolVersion { get; set; } = McpProtocolVersion.v20241105;
 
     /// <summary>
