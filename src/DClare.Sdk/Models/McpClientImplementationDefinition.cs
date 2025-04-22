@@ -31,7 +31,7 @@ public record McpClientImplementationDefinition
     /// Gets/sets the version of the client to use 
     /// </summary>
     [Required, MinLength(1)]
-    [DataMember(Name = "version", Order = 2), JsonPropertyName("version"), JsonPropertyOrder(2), YamlMember(Alias = "version", Order = 2)]
+    [DataMember(Name = "version", Order = 2), JsonPropertyName("version"), JsonPropertyOrder(2), YamlMember(Alias = "version", Order = 2, ScalarStyle = ScalarStyle.SingleQuoted)]
     public virtual string Version { get; set; } = null!;
 
 }

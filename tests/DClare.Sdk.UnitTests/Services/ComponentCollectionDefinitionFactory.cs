@@ -29,7 +29,7 @@ internal static class ComponentCollectionDefinitionFactory
             { "fake-kernel", KernelDefinitionFactory.Create() }
         },
         Memories = MemoryDefinitionFactory.CreateCollection(),
-        Processes = AgenticProcessDefinitionFactory.CreateCollection(),
+        Processes = ProcessDefinitionFactory.CreateCollection(),
         Toolsets = ToolsetDefinitionFactory.CreateCollection()
     };
 

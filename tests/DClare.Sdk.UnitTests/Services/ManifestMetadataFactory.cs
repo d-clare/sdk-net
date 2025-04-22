@@ -1,4 +1,4 @@
-﻿// Copyright © 2025-Present The DClare Authors
+﻿// Copyright � 2025-Present The DClare Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License"),
 // you may not use this file except in compliance with the License.
@@ -11,15 +11,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-global using DClare.Sdk.Models;
-global using FluentValidation;
-global using Json.Schema;
-global using Microsoft.Extensions.DependencyInjection;
-global using Neuroglia;
-global using Neuroglia.Serialization;
-global using System.ComponentModel;
-global using System.ComponentModel.DataAnnotations;
-global using System.Runtime.Serialization;
-global using System.Text.Json.Serialization;
-global using YamlDotNet.Core;
-global using YamlDotNet.Serialization;
+namespace DClare.Sdk.UnitTests.Services;
+
+internal static class ManifestMetadataFactory
+{
+
+    internal static ManifestMetadata Create() => new()
+    {
+        Name = "fake-manifest-name",
+        Description = "fake-manifest-description",
+        Version = "1.0.0",
+        Tags =
+        [
+            "fake-tag-1",
+            "fake-tag-2",
+            "fake-tag-3"
+        ]
+    };
+
+}

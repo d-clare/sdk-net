@@ -16,7 +16,7 @@ namespace DClare.Sdk;
 /// <summary>
 /// Enumerates all supported agentic process types
 /// </summary>
-public static class AgenticProcessType
+public static class ProcessType
 {
 
     /// <summary>

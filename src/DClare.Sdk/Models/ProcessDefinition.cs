@@ -19,7 +19,7 @@ namespace DClare.Sdk.Models;
 /// Represents a high-level orchestration process involving one or more agents
 /// </summary>
 [DataContract]
-public record AgenticProcessDefinition
+public record ProcessDefinition
 {
 
     /// <summary>
@@ -38,6 +38,6 @@ public record AgenticProcessDefinition
     /// Gets the type of agentic process
     /// </summary>
     [IgnoreDataMember, JsonIgnore, YamlIgnore]
-    public virtual string Type => Collaboration != null ? AgenticProcessType.Collaboration : Convergence != null ? AgenticProcessType.Convergence : null!;
+    public virtual string Type => Collaboration != null ? ProcessType.Collaboration : Convergence != null ? ProcessType.Convergence : null!;
 
 }

@@ -13,23 +13,13 @@
 
 namespace DClare.Sdk.UnitTests.Services;
 
-internal static class AgenticProcessDefinitionFactory
+internal static class InterfaceCollectionDefinitionFactory
 {
 
-    internal static AgenticProcessDefinition CreateCollaboration() => new()
+    internal static InterfaceCollectionDefinition Create() => new()
     {
-        Collaboration = CollaborationAgenticProcessDefinitionFactory.Create()
-    };
-
-    internal static AgenticProcessDefinition CreateConvergence() => new()
-    {
-        Convergence = ConvergenceAgenticProcessDefinitionFactory.Create()
-    };
-
-    internal static EquatableDictionary<string, AgenticProcessDefinition> CreateCollection() => new()
-    {
-        { "collaboration", CreateCollaboration() },
-        { "convergence", CreateConvergence() }
+        Agents = AgentInterfaceDefinitionFactory.CreateCollection(),
+        Processes = ProcessInterfaceDefinitionFactory.CreateCollection()
     };
 
 }
