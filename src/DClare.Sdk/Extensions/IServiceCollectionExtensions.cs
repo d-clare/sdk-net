@@ -27,7 +27,12 @@ public static class IServiceCollectionExtensions
     public static IServiceCollection AddDClare(this IServiceCollection services)
     {
         services.AddJsonSerializer();
-        services.AddYamlDotNetSerializer();
+        services.AddYamlDotNetSerializer(options =>
+        {
+            Neuroglia.Serialization.Yaml.YamlSerializer.DefaultSerializerConfiguration(options.Serializer);
+            Neuroglia.Serialization.Yaml.YamlSerializer.DefaultDeserializerConfiguration(options.Deserializer);
+            options.Serializer.DisableAliases();
+        });
         services.AddValidatorsFromAssemblyContaining<WorkflowDefinition>();
         var defaultPropertyNameResolver = ValidatorOptions.Global.PropertyNameResolver;
         ValidatorOptions.Global.PropertyNameResolver = (type, member, lambda) => member == null ? defaultPropertyNameResolver(type, member, lambda) : member.Name.ToCamelCase();
