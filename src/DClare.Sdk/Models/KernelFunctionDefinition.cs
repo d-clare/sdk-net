@@ -24,7 +24,7 @@ public record KernelFunctionDefinition
     /// <summary>
     /// Gets/sets the function's prompt template
     /// </summary>
-    [Required, MinLength(3)]
+    [Required]
     [DataMember(Name = "template", Order = 1), JsonPropertyName("template"), JsonPropertyOrder(1), YamlMember(Alias = "template", Order = 1)]
     public virtual PromptTemplateDefinition Template { get; set; } = null!;
 
