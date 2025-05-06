@@ -1,4 +1,17 @@
-﻿using Neuroglia.Serialization.Yaml;
+﻿// Copyright © 2025-Present The DClare Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License"),
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using Neuroglia.Serialization.Yaml;
 
 namespace DClare.Sdk;
 
@@ -21,12 +34,18 @@ public static class IServiceCollectionExtensions
             YamlSerializer.DefaultSerializerConfiguration(options.Serializer);
             YamlSerializer.DefaultDeserializerConfiguration(options.Deserializer);
             options.Serializer.DisableAliases();
+            var mapEntryConverter = new YamlMapEntryConverter(() => options.Serializer.Build(), () => options.Deserializer.Build());
+            options.Deserializer.WithTypeConverter(mapEntryConverter);
+            options.Serializer.WithTypeConverter(mapEntryConverter);
             options.Serializer.WithTypeConverter(new YamlOneOfConverter());
             options.Deserializer.WithNodeDeserializer(
-                inner => new OneOfNodeDeserializer(inner),
-                syntax => syntax.InsteadOf<JsonSchemaDeserializer>());
+                 inner => new YamlTaskDefinitionDeserializer(inner),
+                 syntax => syntax.InsteadOf<JsonSchemaDeserializer>());
             options.Deserializer.WithNodeDeserializer(
-               inner => new OneOfScalarDeserializer(inner),
+                inner => new YamlOneOfNodeDeserializer(inner),
+                syntax => syntax.InsteadOf<YamlTaskDefinitionDeserializer>());
+            options.Deserializer.WithNodeDeserializer(
+               inner => new YamlOneOfScalarDeserializer(inner),
                syntax => syntax.InsteadOf<StringEnumDeserializer>());
         });
         services.AddValidatorsFromAssemblyContaining<AgentDefinition>();
