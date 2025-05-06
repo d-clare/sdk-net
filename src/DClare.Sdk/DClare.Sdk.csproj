@@ -4,7 +4,7 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <VersionPrefix>0.2.1</VersionPrefix>
+    <VersionPrefix>0.3.0</VersionPrefix>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
@@ -32,10 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
-	<PackageReference Include="Neuroglia.Serialization" Version="4.21.0" />
-	<PackageReference Include="Neuroglia.Serialization.YamlDotNet" Version="4.21.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="Neuroglia.Core" Version="4.21.0" />
+    <PackageReference Include="Neuroglia.Serialization.YamlDotNet" Version="4.21.0" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
   </ItemGroup>
-	
+
 </Project>

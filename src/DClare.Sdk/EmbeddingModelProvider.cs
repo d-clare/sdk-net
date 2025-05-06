@@ -14,44 +14,44 @@
 namespace DClare.Sdk;
 
 /// <summary>
-/// Enumerates all supported embedding model providers
+/// Enumerates all supported embedding model providers used to vectorize data.
 /// </summary>
+[Description("Enumerates all supported embedding model providers used to vectorize data.")]
 public static class EmbeddingModelProvider
 {
 
     /// <summary>
-    /// Indicates Azure OpenAI
+    /// Azure OpenAI Service.
     /// </summary>
     public const string AzureOpenAI = "azure-openai";
     /// <summary>
-    /// Indicates Google Gemini
+    /// Google Gemini API.
     /// </summary>
     public const string Gemini = "gemini";
     /// <summary>
-    /// Indicates Hugging Face
+    /// Hugging Face inference endpoints.
     /// </summary>
     public const string HuggingFace = "hugging-face";
     /// <summary>
-    /// Indicates Mistral AI
+    /// Mistral AI APIs and hosted models.
     /// </summary>
     public const string MistralAI = "mistral";
     /// <summary>
-    /// Indicates Ollama
+    /// Ollama local model runtime.
     /// </summary>
     public const string Ollama = "ollama";
     /// <summary>
-    /// Indicates Onnx
+    /// ONNX runtime for executing locally exported models.
     /// </summary>
     public const string Onnx = "onnx";
     /// <summary>
-    /// Indicates OpenAI
+    /// OpenAI public API.
     /// </summary>
     public const string OpenAI = "openai";
 
     /// <summary>
-    /// Gets an <see cref="IEnumerable{T}"/> containing all supported values
+    /// Returns a list of all supported runtime provider identifiers.
     /// </summary>
-    /// <returns>A new <see cref="IEnumerable{T}"/></returns>
     public static IEnumerable<string> AsEnumerable()
     {
         yield return AzureOpenAI;

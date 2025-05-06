@@ -1,4 +1,4 @@
-﻿// Copyright � 2025-Present The DClare Authors
+﻿// Copyright © 2025-Present The DClare Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License"),
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,13 @@ internal static class ToolsetDefinitionFactory
                         Version = "fake-mcp-client-version"
                     }
                 },
-                Transport = McpTransportDefinitionFactory.CreateHttp()
+                Transport = new()
+                {
+                    Http = new()
+                    {
+                        Endpoint = new Uri("https://fake-endpoint")
+                    }
+                }
             }
         };
     }
@@ -45,10 +51,7 @@ internal static class ToolsetDefinitionFactory
                 Document = new()
                 {
                     Name = "fake-document-name",
-                    Endpoint = new()
-                    {
-                        Uri = new("https://fake-endpoint.com")
-                    }
+                    Endpoint = new Uri("https://fake-endpoint.com")
                 }
             }
         };

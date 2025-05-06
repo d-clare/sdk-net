@@ -1,4 +1,4 @@
-﻿// Copyright � 2025-Present The DClare Authors
+﻿// Copyright © 2025-Present The DClare Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License"),
 // you may not use this file except in compliance with the License.
@@ -12,8 +12,9 @@
 // limitations under the License.
 
 global using DClare.Sdk.Models;
-global using DClare.Sdk.Models.Processes;
+global using DClare.Sdk.UnitTests.Services;
 global using FluentAssertions;
 global using Json.Schema;
+global using Microsoft.Extensions.DependencyInjection;
 global using Neuroglia;
 global using Neuroglia.Serialization;

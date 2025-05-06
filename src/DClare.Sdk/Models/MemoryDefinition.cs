@@ -14,40 +14,42 @@
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents the definition of a memory capability
+/// Represents the definition of a conversation memory
 /// </summary>
+[Description("Represents the definition of a memory")]
 [DataContract]
 public record MemoryDefinition
+    : ReferenceableComponentDefinition
 {
 
     /// <summary>
-    /// Gets/sets the definition of a file-backed memory that loads entries from structured files in the local or remote file system
+    /// Gets or sets the definition of the memory provider to use.
     /// </summary>
-    [DataMember(Name = "file", Order = 1), JsonPropertyName("file"), JsonPropertyOrder(1), YamlMember(Alias = "file", Order = 1)]
-    public virtual FileMemoryDefinition? File { get; set; }
+    [Description("The definition of the memory provider to use.")]
+    [Required]
+    [DataMember(Name = "provider", Order = 1), JsonPropertyName("provider"), JsonPropertyOrder(1), YamlMember(Alias = "provider", Order = 1)]
+    public virtual MemoryProviderDefinition Provider { get; set; } = null!;
 
     /// <summary>
-    /// Gets/sets the definition of a key-value store memory that retrieves entries based on keys or tags
+    /// Gets or sets the retention strategy to use (e.g., 'window', 'full', 'summary').
     /// </summary>
-    [DataMember(Name = "keyvalue", Order = 1), JsonPropertyName("keyvalue"), JsonPropertyOrder(1), YamlMember(Alias = "keyvalue", Order = 1)]
-    public virtual KeyValueMemoryDefinition? KeyValue { get; set; }
+    [Description("The memory retention to use (e.g., 'window', 'full', 'summary').")]
+    [Required, AllowedValues(MemoryStrategy.Full, MemoryStrategy.Summary, MemoryStrategy.Window), DefaultValue(MemoryStrategy.Full)]
+    [DataMember(Name = "strategy", Order = 2), JsonPropertyName("strategy"), JsonPropertyOrder(2), YamlMember(Alias = "strategy", Order = 2)]
+    public virtual string Strategy { get; set; } = MemoryStrategy.Full;
 
     /// <summary>
-    /// Gets/sets the definition of a static memory that returns predefined values without kernel lookup
+    /// Gets or sets the maximum number of exchanges to retain in memory when using the 'window' strategy.
     /// </summary>
-    [DataMember(Name = "static", Order = 1), JsonPropertyName("static"), JsonPropertyOrder(1), YamlMember(Alias = "static", Order = 1)]
-    public virtual StaticMemoryDefinition? Static { get; set; }
+    [Description("The number of recent exchanges to retain if using the 'window' strategy.")]
+    [DataMember(Name = "windowSize", Order = 3), JsonPropertyName("windowSize"), JsonPropertyOrder(3), YamlMember(Alias = "windowSize", Order = 3)]
+    public virtual int? WindowSize { get; set; }
 
     /// <summary>
-    /// Gets/sets the definition of a vector memory that retrieves entries using semantic similarity and vector search
+    /// Gets or sets the function used to summarize memory when using the 'summary' strategy.
     /// </summary>
-    [DataMember(Name = "vector", Order = 1), JsonPropertyName("vector"), JsonPropertyOrder(1), YamlMember(Alias = "vector", Order = 1)]
-    public virtual VectorMemoryDefinition? Vector { get; set; }
-
-    /// <summary>
-    /// Gets the memory's type based on which definition is present
-    /// </summary>
-    [IgnoreDataMember, JsonIgnore, YamlIgnore]
-    public virtual string Type => File != null ? MemoryType.File : KeyValue != null ? MemoryType.KeyValue : Static != null ? MemoryType.Static : Vector != null ? MemoryType.Vector : null!;
+    [Description("The function used to summarize memory when using the 'summary' strategy.")]
+    [DataMember(Name = "summarizer", Order = 4), JsonPropertyName("summarizer"), JsonPropertyOrder(4), YamlMember(Alias = "summarizer", Order = 4)]
+    public virtual FunctionDefinition? Summarizer { get; set; }
 
 }

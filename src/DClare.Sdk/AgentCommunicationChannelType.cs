@@ -14,20 +14,20 @@
 namespace DClare.Sdk;
 
 /// <summary>
-/// Enumerates all types of agent communication channels
+/// Enumerates all supported types of agent communication channels.
 /// </summary>
 public static class AgentCommunicationChannelType
 {
 
     /// <summary>
-    /// Indicates a channel using the Agent2Agent protocol
+    /// Indicates a communication channel using the Agent-to-Agent (A2A) protocol.
     /// </summary>
     public const string A2A = "a2a";
 
     /// <summary>
-    /// Gets an <see cref="IEnumerable{T}"/> containing all supported values
+    /// Returns a collection of all supported communication channel types.
     /// </summary>
-    /// <returns>A new <see cref="IEnumerable{T}"/></returns>
+    /// <returns>An enumerable list of supported communication channel identifiers.</returns>
     public static IEnumerable<string> AsEnumerable()
     {
         yield return A2A;

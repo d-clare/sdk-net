@@ -11,6 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Neuroglia.Serialization.Yaml;
+
 namespace DClare.Sdk;
 
 /// <summary>
@@ -29,11 +31,24 @@ public static class IServiceCollectionExtensions
         services.AddJsonSerializer();
         services.AddYamlDotNetSerializer(options =>
         {
-            Neuroglia.Serialization.Yaml.YamlSerializer.DefaultSerializerConfiguration(options.Serializer);
-            Neuroglia.Serialization.Yaml.YamlSerializer.DefaultDeserializerConfiguration(options.Deserializer);
+            YamlSerializer.DefaultSerializerConfiguration(options.Serializer);
+            YamlSerializer.DefaultDeserializerConfiguration(options.Deserializer);
             options.Serializer.DisableAliases();
+            var mapEntryConverter = new YamlMapEntryConverter(() => options.Serializer.Build(), () => options.Deserializer.Build());
+            options.Deserializer.WithTypeConverter(mapEntryConverter);
+            options.Serializer.WithTypeConverter(mapEntryConverter);
+            options.Serializer.WithTypeConverter(new YamlOneOfConverter());
+            options.Deserializer.WithNodeDeserializer(
+                 inner => new YamlTaskDefinitionDeserializer(inner),
+                 syntax => syntax.InsteadOf<JsonSchemaDeserializer>());
+            options.Deserializer.WithNodeDeserializer(
+                inner => new YamlOneOfNodeDeserializer(inner),
+                syntax => syntax.InsteadOf<YamlTaskDefinitionDeserializer>());
+            options.Deserializer.WithNodeDeserializer(
+               inner => new YamlOneOfScalarDeserializer(inner),
+               syntax => syntax.InsteadOf<StringEnumDeserializer>());
         });
-        services.AddValidatorsFromAssemblyContaining<WorkflowDefinition>();
+        services.AddValidatorsFromAssemblyContaining<AgentDefinition>();
         var defaultPropertyNameResolver = ValidatorOptions.Global.PropertyNameResolver;
         ValidatorOptions.Global.PropertyNameResolver = (type, member, lambda) => member == null ? defaultPropertyNameResolver(type, member, lambda) : member.Name.ToCamelCase();
         return services;

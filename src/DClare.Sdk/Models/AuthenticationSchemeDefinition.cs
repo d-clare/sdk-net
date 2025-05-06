@@ -11,34 +11,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using DClare.Sdk.Models.Authentication;
-
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents the base class for all authentication scheme definitions
+/// Represents the abstract base class for all authentication scheme definitions, including shared properties like secret reference and parameter placement.
 /// </summary>
+[Description("Represents the abstract base class for all authentication scheme definitions, including shared properties like secret reference and parameter placement.")]
 [DataContract]
-public abstract record AuthenticationSchemeDefinition
-    : Extendable
+public abstract record AuthenticationSchemeDefinition 
+    : ReferenceableComponentDefinition
 {
 
     /// <summary>
-    /// Gets the name of the authentication scheme
+    /// Gets the name of the authentication scheme (e.g., 'apikey', 'bearer', 'oauth2', 'oidc').
     /// </summary>
+    [Description("The name of the authentication scheme (e.g., 'apikey', 'bearer', 'oauth2', 'oidc').")]
     [IgnoreDataMember, JsonIgnore, YamlIgnore]
     public abstract string Scheme { get; }
 
     /// <summary>
-    /// Gets/sets the name of the secret, if any, used to configure the authentication scheme
+    /// Gets or sets a key/value mapping of the object's extension data, if any
     /// </summary>
-    [DataMember(Name = "use", Order = 1), JsonPropertyName("use"), JsonPropertyOrder(1), YamlMember(Alias = "use", Order = 1)]
-    public virtual string? Use { get; set; }
-
-    /// <summary>
-    /// Gets/sets the definition of the placement, if any, of the resolved authentication parameter
-    /// </summary>
-    [DataMember(Name = "placement", Order = 99), JsonPropertyName("placement"), JsonPropertyOrder(99), YamlMember(Alias = "placement", Order = 99)]
-    public virtual AuthenticationParameterPlacementDefinition? Placement { get; set; }
+    [DataMember(Name = "extensions", Order = 99), JsonPropertyName("extensions"), JsonPropertyOrder(99), YamlMember(Alias = "extensions", Order = 99)]
+    public virtual EquatableDictionary<string, object>? Extensions { get; set; }
 
 }

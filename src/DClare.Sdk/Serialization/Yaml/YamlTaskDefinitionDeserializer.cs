@@ -1,0 +1,40 @@
+﻿// Copyright © 2025-Present The DClare Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License"),
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using YamlDotNet.Core;
+
+namespace DClare.Sdk.Serialization.Yaml;
+
+/// <summary>
+/// Represents the service used to deserialize <see cref="TaskDefinition"/>s from YAML
+/// </summary>
+/// <param name="inner">The inner <see cref="INodeDeserializer"/></param>
+public class YamlTaskDefinitionDeserializer(INodeDeserializer inner)
+    : INodeDeserializer
+{
+
+    /// <summary>
+    /// Gets the inner <see cref="INodeDeserializer"/>
+    /// </summary>
+    protected INodeDeserializer Inner { get; } = inner;
+
+    /// <inheritdoc/>
+    public virtual bool Deserialize(IParser reader, Type expectedType, Func<IParser, Type, object?> nestedObjectDeserializer, out object? value, ObjectDeserializer rootDeserializer)
+    {
+        if (!typeof(TaskDefinition).IsAssignableFrom(expectedType)) return this.Inner.Deserialize(reader, expectedType, nestedObjectDeserializer, out value, rootDeserializer);
+        if (!this.Inner.Deserialize(reader, typeof(Dictionary<object, object>), nestedObjectDeserializer, out value, rootDeserializer)) return false;
+        value = Neuroglia.Serialization.Json.JsonSerializer.Default.Deserialize<TaskDefinition>(Neuroglia.Serialization.Json.JsonSerializer.Default.SerializeToText(value!));
+        return true;
+    }
+
+}

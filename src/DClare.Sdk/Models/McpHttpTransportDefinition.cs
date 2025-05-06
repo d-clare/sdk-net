@@ -14,23 +14,27 @@
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents the definition of an HTTP transport for the Model Context Protocol
+/// Represents the definition of an HTTP transport for the Model Context Protocol (MCP).
 /// </summary>
+[Description("Represents the definition of an HTTP transport for the Model Context Protocol (MCP).")]
 [DataContract]
 public record McpHttpTransportDefinition
 {
 
     /// <summary>
-    /// Gets/sets the endpoint at which to get the defined resource
+    /// Gets or sets the endpoint used to connect to the MCP server.
     /// </summary>
+    [Description("The endpoint used to connect to the MCP server.")]
     [Required]
     [DataMember(Name = "endpoint", Order = 1), JsonInclude, JsonPropertyName("endpoint"), JsonPropertyOrder(1), YamlMember(Alias = "endpoint", Order = 1)]
-    public virtual EndpointDefinition Endpoint { get; set; } = null!;
+    public virtual OneOf<EndpointDefinition, Uri> Endpoint { get; set; } = null!;
 
     /// <summary>
-    /// Gets/sets a key/value mapping, if any, of the headers to use to connect to the MCP server
+    /// Gets or sets a key/value mapping of the HTTP headers to send with the request, if any.
     /// </summary>
+    [Description("A dictionary of HTTP headers to send when connecting to the MCP server.")]
     [DataMember(Name = "headers", Order = 2), JsonInclude, JsonPropertyName("headers"), JsonPropertyOrder(2), YamlMember(Alias = "headers", Order = 2)]
     public virtual EquatableDictionary<string, string>? Headers { get; set; }
 
 }
+

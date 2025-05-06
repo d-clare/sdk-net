@@ -11,41 +11,46 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using YamlDotNet.Core;
+
 namespace DClare.Sdk.Models;
 
 /// <summary>
-/// Represents an object used to describe an DClare workflow definition
+/// Represents an object used to describe an agentic workflow.
 /// </summary>
+[Description("Represents an object used to describe an agentic workflow.")]
 [DataContract]
 public record WorkflowDefinitionMetadata
 {
 
     /// <summary>
-    /// Gets/sets the version of the DSL used to write the workflow
+    /// Gets or sets the workflow's name. Must conform to the DNS label specification (RFC 1123): lower-case alphanumeric characters, hyphens ('-'), and periods ('.'), starting and ending with an alphanumeric character.
     /// </summary>
-    [Required, RegularExpression(SemanticVersion.Pattern)]
-    [DataMember(Name = "dsl", Order = 1), JsonPropertyName("dsl"), JsonPropertyOrder(1), YamlMember(Alias = "dsl", Order = 1)]
-    public virtual string Dsl { get; set; } = null!;
-
-    /// <summary>
-    /// Gets/sets the namespace the workflow belongs to
-    /// </summary>
-    [Required, MinLength(NamingConvention.MinLength), MaxLength(NamingConvention.MaxLength)]
-    [DataMember(Name = "namespace", Order = 2), JsonPropertyName("namespace"), JsonPropertyOrder(2), YamlMember(Alias = "namespace", Order = 2)]
-    public virtual string Namespace { get; set; } = null!;
-
-    /// <summary>
-    /// Gets/sets the workflow's name
-    /// </summary>
-    [Required, MinLength(NamingConvention.MinLength), MaxLength(NamingConvention.MaxLength)]
-    [DataMember(Name = "name", Order = 3), JsonPropertyName("name"), JsonPropertyOrder(3), YamlMember(Alias = "name", Order = 3)]
+    [Description("The workflow's name. Must conform to the DNS label specification (RFC 1123): lower-case alphanumeric characters, hyphens ('-'), and periods ('.'), starting and ending with an alphanumeric character.")]
+    [Required, StringLength(DnsLabel.MaxLength, MinimumLength = DnsLabel.MinLength), RegularExpression(DnsLabel.Regex)]
+    [DataMember(Name = "name", Order = 1), JsonPropertyName("name"), JsonPropertyOrder(1), YamlMember(Alias = "name", Order = 1)]
     public virtual string Name { get; set; } = null!;
 
     /// <summary>
-    /// Gets/sets the workflow's semantic version
+    /// Gets or sets the workflow's semantic version.
     /// </summary>
-    [Required, RegularExpression(SemanticVersion.Pattern)]
-    [DataMember(Name = "version", Order = 4), JsonPropertyName("version"), JsonPropertyOrder(4), YamlMember(Alias = "version", Order = 4)]
+    [Description("The workflow's semantic version.")]
+    [Required, RegularExpression("^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$")]
+    [DataMember(Name = "version", Order = 2), JsonPropertyName("version"), JsonPropertyOrder(2), YamlMember(Alias = "version", Order = 2, ScalarStyle = ScalarStyle.SingleQuoted)]
     public virtual string Version { get; set; } = null!;
+
+    /// <summary>
+    /// Gets or sets the description of the workflow, which is intended to provide context or documentation for the workflow. Supports Markdown.
+    /// </summary>
+    [Description("The description of the workflow, which is intended to provide context or documentation for the workflow. Supports Markdown.")]
+    [DataMember(Name = "description", Order = 3), JsonPropertyName("description"), JsonPropertyOrder(3), YamlMember(Alias = "description", Order = 3)]
+    public virtual string? Description { get; set; }
+
+    /// <summary>
+    /// Gets/sets an optional list of keywords or labels used to categorize or filter manifests by theme, domain, or capability.
+    /// </summary>
+    [Description("An optional list of keywords or labels used to categorize or filter manifests by theme, domain, or capability.")]
+    [DataMember(Name = "tags", Order = 4), JsonPropertyName("tags"), JsonPropertyOrder(4), YamlMember(Alias = "tags", Order = 4)]
+    public virtual EquatableList<string>? Tags { get; set; }
 
 }
