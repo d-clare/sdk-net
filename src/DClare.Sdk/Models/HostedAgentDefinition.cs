@@ -22,39 +22,53 @@ public record HostedAgentDefinition
 {
 
     /// <summary>
+    /// Gets or sets the human-readable title of the agent.
+    /// </summary>
+    [Description("The human-readable title of the agent.")]
+    [DataMember(Name = "title", Order = 1), JsonInclude, JsonPropertyName("title"), JsonPropertyOrder(1), YamlMember(Alias = "title", Order = 1)]
+    public virtual string? Title { get; set; }
+
+    /// <summary>
     /// Gets or sets an optional human-readable description of the agent's purpose or role.
     /// </summary>
     [Description("Optional human-readable description of the agent's purpose or role.")]
-    [DataMember(Name = "description", Order = 1), JsonInclude, JsonPropertyName("description"), JsonPropertyOrder(1), YamlMember(Alias = "description", Order = 1)]
+    [DataMember(Name = "description", Order = 2), JsonInclude, JsonPropertyName("description"), JsonPropertyOrder(2), YamlMember(Alias = "description", Order = 2)]
     public virtual string? Description { get; set; }
+
+    /// <summary>
+    /// Gets or sets a reference to the agent's documentation, either as a URI or an inline description.
+    /// </summary>
+    [Description("A reference to the agent's documentation, either as a URI or an inline description.")]
+    [DataMember(Name = "documentation", Order = 3), JsonInclude, JsonPropertyName("documentation"), JsonPropertyOrder(3), YamlMember(Alias = "documentation", Order = 3)]
+    public virtual OneOf<Uri, string>? Documentation { get; set; }
 
     /// <summary>
     /// Gets or sets the union value representing either a prompt template or a raw instruction string.
     /// </summary>
     [Required]
     [Description("Defines the agent's instructions, either as a raw string or a prompt template.")]
-    [DataMember(Name = "instructions", Order = 2), JsonInclude, JsonPropertyName("instructions"), JsonPropertyOrder(2), YamlMember(Alias = "instructions", Order = 2)]
+    [DataMember(Name = "instructions", Order = 4), JsonInclude, JsonPropertyName("instructions"), JsonPropertyOrder(4), YamlMember(Alias = "instructions", Order = 4)]
     public virtual OneOf<PromptTemplateDefinition, string> Instructions { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the dictionary of named skills the agent supports.
     /// </summary>
     [Description("A dictionary of named skills the agent supports.")]
-    [DataMember(Name = "skills", Order = 3), JsonInclude, JsonPropertyName("skills"), JsonPropertyOrder(3), YamlMember(Alias = "skills", Order = 3)]
+    [DataMember(Name = "skills", Order = 5), JsonInclude, JsonPropertyName("skills"), JsonPropertyOrder(5), YamlMember(Alias = "skills", Order = 5)]
     public virtual EquatableDictionary<string, AgentSkillDefinition>? Skills { get; set; }
 
     /// <summary>
     /// Gets or sets the memory definition used by the agent, if any.
     /// </summary>
     [Description("The memory configuration used by the agent, if any.")]
-    [DataMember(Name = "memory", Order = 4), JsonInclude, JsonPropertyName("memory"), JsonPropertyOrder(4), YamlMember(Alias = "memory", Order = 4)]
+    [DataMember(Name = "memory", Order = 6), JsonInclude, JsonPropertyName("memory"), JsonPropertyOrder(6), YamlMember(Alias = "memory", Order = 6)]
     public virtual MemoryDefinition? Memory { get; set; }
 
     /// <summary>
     /// Gets or sets the knowledge configuration used by the agent, if any.
     /// </summary>
     [Description("The knowledge configuration used by the agent, if any.")]
-    [DataMember(Name = "knowledge", Order = 5), JsonInclude, JsonPropertyName("knowledge"), JsonPropertyOrder(5), YamlMember(Alias = "knowledge", Order = 5)]
+    [DataMember(Name = "knowledge", Order = 7), JsonInclude, JsonPropertyName("knowledge"), JsonPropertyOrder(7), YamlMember(Alias = "knowledge", Order = 7)]
     public virtual KnowledgeDefinition? Knowledge { get; set; }
 
     /// <summary>
@@ -62,14 +76,14 @@ public record HostedAgentDefinition
     /// </summary>
     [Required]
     [Description("The definition of the LLM used by the agent.")]
-    [DataMember(Name = "llm", Order = 6), JsonInclude, JsonPropertyName("llm"), JsonPropertyOrder(6), YamlMember(Alias = "llm", Order = 6)]
+    [DataMember(Name = "llm", Order = 8), JsonInclude, JsonPropertyName("llm"), JsonPropertyOrder(8), YamlMember(Alias = "llm", Order = 8)]
     public virtual LlmDefinition Llm { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the toolsets the agent is capable of using.
     /// </summary>
     [Description("The toolsets the agent is capable of using.")]
-    [DataMember(Name = "toolsets", Order = 7), JsonInclude, JsonPropertyName("toolsets"), JsonPropertyOrder(7), YamlMember(Alias = "toolsets", Order = 7)]
+    [DataMember(Name = "toolsets", Order = 9), JsonInclude, JsonPropertyName("toolsets"), JsonPropertyOrder(9), YamlMember(Alias = "toolsets", Order = 9)]
     public virtual EquatableDictionary<string, ToolsetDefinition>? Toolsets { get; set; }
 
 }

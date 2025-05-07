@@ -33,7 +33,6 @@ public record A2ACommunicationChannelDefinition
     /// Gets or sets the unique name used to identify the remote agent.
     /// </summary>
     [Description("The unique name used to identify the remote agent.")]
-    [Required]
     [DataMember(Name = "name", Order = 2), JsonPropertyName("name"), JsonPropertyOrder(2), YamlMember(Alias = "name", Order = 2)]
     public virtual string? Name { get; set; }
 

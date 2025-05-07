@@ -18,7 +18,7 @@ namespace DClare.Sdk.Models;
 /// </summary>
 [Description("Represents a collection of reusable components that can be referenced within a workflow.")]
 [DataContract]
-public record ComponentCollectionDefinition
+public record ComponentDefinitionCollection
 {
 
     /// <summary>
