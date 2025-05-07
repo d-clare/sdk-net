@@ -19,6 +19,7 @@ namespace DClare.Sdk.Models;
 [Description("Represents the definition of an AI agent")]
 [DataContract]
 public record AgentDefinition
+    : ReferenceableComponentDefinition
 {
 
     /// <summary>

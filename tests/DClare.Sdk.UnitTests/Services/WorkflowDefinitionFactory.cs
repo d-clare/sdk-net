@@ -18,7 +18,7 @@ internal static class WorkflowDefinitionFactory
 
     internal static WorkflowDefinition Create() => new()
     {
-        Metadata = new()
+        Document = new()
         {
             Name = "fake-name",
             Version = "1.0.0",
