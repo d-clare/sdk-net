@@ -25,7 +25,7 @@ public record EndpointDefinition
     /// Gets or sets the endpoint URI.
     /// </summary>
     [Description("The endpoint URI.")]
-    [Required, DataType(DataType.Url)]
+    [DataType(DataType.Url)]
     [DataMember(Name = "uri", Order = 1), JsonPropertyName("uri"), JsonPropertyOrder(1), YamlMember(Alias = "uri", Order = 1)]
     public virtual Uri? Uri { get; set; } = null!;
 
