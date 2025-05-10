@@ -52,8 +52,8 @@ public record EmbeddingModelDefinition
     /// </summary>
     [Description("The maximum number of tokens, if any, that can be processed by the embedding model in a single input.")]
     [Required, Range(1, int.MaxValue)]
-    [DataMember(Name = "maxTokenCount", Order = 4), JsonPropertyName("maxTokenCount"), JsonPropertyOrder(4), YamlMember(Alias = "maxTokenCount", Order = 4)]
-    public virtual uint MaxTokenCount { get; set; }
+    [DataMember(Name = "maxToken", Order = 4), JsonPropertyName("maxToken"), JsonPropertyOrder(4), YamlMember(Alias = "maxToken", Order = 4)]
+    public virtual uint MaxTokens { get; set; }
 
     /// <summary>
     /// Gets or sets the definition of the API used to invoke the embedding model.
