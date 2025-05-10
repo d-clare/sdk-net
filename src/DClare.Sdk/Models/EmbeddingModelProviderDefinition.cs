@@ -25,9 +25,9 @@ public record EmbeddingModelProviderDefinition
     /// <summary>
     /// Gets or sets the name of the embedding model provider.
     /// </summary>
-    [Description("The name of the embedding model provider. Supported values include 'openai', 'azure-openai', 'hugging-face', 'gemini', 'mistral', 'ollama', and 'onnx'.")]
+    [Description("The name of the embedding model provider. Supported values include 'openai', 'azure-openai', 'hugging-face', 'gemini', 'generic', 'mistral', 'ollama', and 'onnx'.")]
     [Required, MinLength(1)]
-    [AllowedValues(EmbeddingModelProvider.AzureOpenAI, EmbeddingModelProvider.Gemini, EmbeddingModelProvider.HuggingFace, EmbeddingModelProvider.MistralAI, EmbeddingModelProvider.Ollama, EmbeddingModelProvider.Onnx, EmbeddingModelProvider.OpenAI)]
+    [AllowedValues(EmbeddingModelProvider.AzureOpenAI, EmbeddingModelProvider.Gemini, EmbeddingModelProvider.Generic, EmbeddingModelProvider.HuggingFace, EmbeddingModelProvider.MistralAI, EmbeddingModelProvider.Ollama, EmbeddingModelProvider.Onnx, EmbeddingModelProvider.OpenAI)]
     [DataMember(Name = "name", Order = 1), JsonPropertyName("name"), JsonPropertyOrder(1), YamlMember(Alias = "name", Order = 1)]
     public virtual string Name { get; set; } = null!;
 

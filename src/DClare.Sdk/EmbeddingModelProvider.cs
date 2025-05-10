@@ -21,13 +21,17 @@ public static class EmbeddingModelProvider
 {
 
     /// <summary>
-    /// Azure OpenAI Service.
+    /// Azure OpenAI service.
     /// </summary>
     public const string AzureOpenAI = "azure-openai";
     /// <summary>
     /// Google Gemini API.
     /// </summary>
     public const string Gemini = "gemini";
+    /// <summary>
+    /// Generic embedding service.
+    /// </summary>
+    public const string Generic = "generic";
     /// <summary>
     /// Hugging Face inference endpoints.
     /// </summary>
@@ -56,6 +60,7 @@ public static class EmbeddingModelProvider
     {
         yield return AzureOpenAI;
         yield return Gemini;
+        yield return Generic;
         yield return HuggingFace;
         yield return MistralAI;
         yield return Ollama;
