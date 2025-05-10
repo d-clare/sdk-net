@@ -40,11 +40,19 @@ public record EmbeddingModelDefinition
     public virtual string Model { get; set; } = null!;
 
     /// <summary>
+    /// Gets or sets the dimensionality of the vectors produced by the embedding model.
+    /// </summary>
+    [Description("The dimensionality of the vectors produced by the embedding model.")]
+    [Required]
+    [DataMember(Name = "dimensions", Order = 3), JsonPropertyName("dimensions"), JsonPropertyOrder(3), YamlMember(Alias = "dimensions", Order = 3)]
+    public virtual uint Dimensions { get; set; }
+
+    /// <summary>
     /// Gets or sets the definition of the API used to invoke the embedding model.
     /// </summary>
     [Description("The definition of the API used to invoke the embedding model.")]
     [Required]
-    [DataMember(Name = "api", Order = 3), JsonPropertyName("api"), JsonPropertyOrder(3), YamlMember(Alias = "api", Order = 3)]
+    [DataMember(Name = "api", Order = 4), JsonPropertyName("api"), JsonPropertyOrder(4), YamlMember(Alias = "api", Order = 4)]
     public virtual EmbeddingApiDefinition Api { get; set; } = null!;
 
     /// <inheritdoc/>

@@ -67,12 +67,17 @@ public static class ComponentDefinitionCollectionExtensions
         }
         if (type == typeof(EmbeddingModelDefinition))
         {
-            if (collection.Embedders?.TryGetValue(name, out var component) == true) return component;
+            if (collection.EmbeddingModels?.TryGetValue(name, out var component) == true) return component;
             else return null;
         }
         if (type == typeof(VectorStoreDefinition))
         {
-            if (collection.Vectors?.TryGetValue(name, out var component) == true) return component;
+            if (collection.VectorStores?.TryGetValue(name, out var component) == true) return component;
+            else return null;
+        }
+        if (type == typeof(VectorCollectionDefinition))
+        {
+            if (collection.VectorCollections?.TryGetValue(name, out var component) == true) return component;
             else return null;
         }
         if (type == typeof(KnowledgeGraphDefinition))
