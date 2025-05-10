@@ -43,16 +43,24 @@ public record EmbeddingModelDefinition
     /// Gets or sets the dimensionality of the vectors produced by the embedding model.
     /// </summary>
     [Description("The dimensionality of the vectors produced by the embedding model.")]
-    [Required]
+    [Required, Range(1, int.MaxValue)]
     [DataMember(Name = "dimensions", Order = 3), JsonPropertyName("dimensions"), JsonPropertyOrder(3), YamlMember(Alias = "dimensions", Order = 3)]
     public virtual uint Dimensions { get; set; }
+
+    /// <summary>
+    /// Gets or sets the maximum number of tokens, if any, that can be processed by the embedding model in a single input.
+    /// </summary>
+    [Description("The maximum number of tokens, if any, that can be processed by the embedding model in a single input.")]
+    [Required, Range(1, int.MaxValue)]
+    [DataMember(Name = "maxTokenCount", Order = 4), JsonPropertyName("maxTokenCount"), JsonPropertyOrder(4), YamlMember(Alias = "maxTokenCount", Order = 4)]
+    public virtual uint MaxTokenCount { get; set; }
 
     /// <summary>
     /// Gets or sets the definition of the API used to invoke the embedding model.
     /// </summary>
     [Description("The definition of the API used to invoke the embedding model.")]
     [Required]
-    [DataMember(Name = "api", Order = 4), JsonPropertyName("api"), JsonPropertyOrder(4), YamlMember(Alias = "api", Order = 4)]
+    [DataMember(Name = "api", Order = 5), JsonPropertyName("api"), JsonPropertyOrder(5), YamlMember(Alias = "api", Order = 5)]
     public virtual EmbeddingApiDefinition Api { get; set; } = null!;
 
     /// <inheritdoc/>
