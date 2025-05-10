@@ -26,9 +26,8 @@ internal static class AgentDefinitionFactory
             Memory = MemoryDefinitionFactory.Create(),
             Knowledge = new()
             {
-                Embedding = EmbeddingModelDefinitionFactory.Create(),
-                Store = VectorStoreDefinitionFactory.Create(),
-                Graph = KnowledgeGraphDefinitionFactory.Create()
+                Vectors = VectorCollectionDefinitionFactory.CreateCollection(),
+                Graphs = KnowledgeGraphDefinitionFactory.CreateCollection()
             },
             Llm = LlmDefinitionFactory.Create(),
             Toolsets = ToolsetDefinitionFactory.CreateCollection()

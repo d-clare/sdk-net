@@ -22,26 +22,17 @@ public record KnowledgeDefinition
 {
 
     /// <summary>
-    /// Gets or sets the embedding model used to vectorize textual input.
+    /// Gets or sets the vector record collections available to the agent, each defined by its embedding model and backing vector store.
     /// </summary>
-    [Description("The embedding model used to vectorize text.")]
-    [Required]
-    [DataMember(Name = "embedding", Order = 1), JsonPropertyName("embedding"), JsonPropertyOrder(1), YamlMember(Alias = "embedding", Order = 1)]
-    public virtual EmbeddingModelDefinition Embedding { get; set; } = null!;
+    [Description("The vector record collections, if any, available to the agent, each defined by its embedding model and backing vector store.")]
+    [DataMember(Name = "vectors", Order = 1), JsonPropertyName("vectors"), JsonPropertyOrder(1), YamlMember(Alias = "vectors", Order = 1)]
+    public virtual EquatableDictionary<string, VectorCollectionDefinition>? Vectors { get; set; }
 
     /// <summary>
-    /// Gets or sets the vector store used to persist and retrieve embedded representations.
+    /// Gets or sets the knowledge graphs available to the agent, used for concept resolution and relationship traversal.
     /// </summary>
-    [Description("The vector store used to store and retrieve vectorized knowledge.")]
-    [Required]
-    [DataMember(Name = "store", Order = 2), JsonPropertyName("store"), JsonPropertyOrder(2), YamlMember(Alias = "store", Order = 2)]
-    public virtual VectorStoreDefinition Store { get; set; } = null!;
-
-    /// <summary>
-    /// Gets or sets the knowledge graph used for concept resolution and semantic traversal.
-    /// </summary>
-    [Description("The knowledge graph used for concept resolution and semantic traversal.")]
-    [DataMember(Name = "graph", Order = 3), JsonPropertyName("graph"), JsonPropertyOrder(3), YamlMember(Alias = "graph", Order = 3)]
-    public virtual KnowledgeGraphDefinition? Graph { get; set; }
+    [Description("The knowledge graphs available to the agent, used for concept resolution and relationship traversal.")]
+    [DataMember(Name = "graph", Order = 2), JsonPropertyName("graph"), JsonPropertyOrder(2), YamlMember(Alias = "graph", Order = 2)]
+    public virtual EquatableDictionary<string, KnowledgeGraphDefinition>? Graphs { get; set; }
 
 }

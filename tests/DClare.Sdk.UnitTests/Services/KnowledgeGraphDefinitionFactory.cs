@@ -25,4 +25,9 @@ internal static class KnowledgeGraphDefinitionFactory
         }
     };
 
+    internal static EquatableDictionary<string, KnowledgeGraphDefinition> CreateCollection() => new()
+    {
+        { "fake-graph", Create() }
+    };
+
 }

@@ -67,35 +67,42 @@ public record ComponentDefinitionCollection
     /// Gets or sets a mapping of reusable embedding model definitions, keyed by name.
     /// </summary>
     [Description("A mapping of reusable embedding model definitions, keyed by name.")]
-    [DataMember(Name = "embedders", Order = 7), JsonPropertyName("embedders"), JsonPropertyOrder(7), YamlMember(Alias = "embedders", Order = 7)]
-    public virtual EquatableDictionary<string, EmbeddingModelDefinition>? Embedders { get; set; }
+    [DataMember(Name = "embeddingModels", Order = 7), JsonPropertyName("embeddingModels"), JsonPropertyOrder(7), YamlMember(Alias = "embeddingModels", Order = 7)]
+    public virtual EquatableDictionary<string, EmbeddingModelDefinition>? EmbeddingModels { get; set; }
 
     /// <summary>
     /// Gets or sets a mapping of reusable vector store definitions, keyed by name.
     /// </summary>
     [Description("A mapping of reusable vector store definitions, keyed by name.")]
-    [DataMember(Name = "vectors", Order = 8), JsonPropertyName("vectors"), JsonPropertyOrder(8), YamlMember(Alias = "vectors", Order = 8)]
-    public virtual EquatableDictionary<string, VectorStoreDefinition>? Vectors { get; set; }
+    [DataMember(Name = "vectorStores", Order = 8), JsonPropertyName("vectorStores"), JsonPropertyOrder(8), YamlMember(Alias = "vectorStores", Order = 8)]
+    public virtual EquatableDictionary<string, VectorStoreDefinition>? VectorStores { get; set; }
+
+    /// <summary>
+    /// Gets or sets a mapping of reusable vector collection definitions, keyed by name.
+    /// </summary>
+    [Description("A mapping of reusable vector collection definitions, keyed by name.")]
+    [DataMember(Name = "vectorCollections", Order = 9), JsonPropertyName("vectorCollections"), JsonPropertyOrder(9), YamlMember(Alias = "vectorCollections", Order = 9)]
+    public virtual EquatableDictionary<string, VectorCollectionDefinition>? VectorCollections { get; set; }
 
     /// <summary>
     /// Gets or sets a mapping of reusable knowledge graph definitions, keyed by name.
     /// </summary>
     [Description("A mapping of reusable knowledge graph definitions, keyed by name.")]
-    [DataMember(Name = "graphs", Order = 9), JsonPropertyName("graphs"), JsonPropertyOrder(9), YamlMember(Alias = "graphs", Order = 9)]
+    [DataMember(Name = "graphs", Order = 10), JsonPropertyName("graphs"), JsonPropertyOrder(10), YamlMember(Alias = "graphs", Order = 10)]
     public virtual EquatableDictionary<string, KnowledgeGraphDefinition>? Graphs { get; set; }
 
     /// <summary>
     /// Gets or sets a mapping of reusable Large Language Model (LLM) definitions, keyed by name.
     /// </summary>
     [Description("A mapping of reusable LLM Large Language Model (LLM) definitions, keyed by name.")]
-    [DataMember(Name = "llms", Order = 10), JsonPropertyName("llms"), JsonPropertyOrder(10), YamlMember(Alias = "llms", Order = 10)]
+    [DataMember(Name = "llms", Order = 11), JsonPropertyName("llms"), JsonPropertyOrder(11), YamlMember(Alias = "llms", Order = 11)]
     public virtual EquatableDictionary<string, LlmDefinition>? Llms { get; set; }
 
     /// <summary>
     /// Gets or sets a mapping of reusable agent definitions, keyed by name.
     /// </summary>
     [Description("A mapping of reusable agent definitions, keyed by name.")]
-    [DataMember(Name = "agents", Order = 11), JsonPropertyName("agents"), JsonPropertyOrder(11), YamlMember(Alias = "agents", Order = 11)]
+    [DataMember(Name = "agents", Order = 12), JsonPropertyName("agents"), JsonPropertyOrder(12), YamlMember(Alias = "agents", Order = 12)]
     public virtual EquatableDictionary<string, AgentDefinition>? Agents { get; set; }
 
 }

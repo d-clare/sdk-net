@@ -13,22 +13,19 @@
 
 namespace DClare.Sdk.UnitTests.Services;
 
-internal static class EmbeddingModelDefinitionFactory
+internal static class VectorCollectionDefinitionFactory
 {
 
-    internal static EmbeddingModelDefinition Create() => new()
+    internal static VectorCollectionDefinition Create() => new()
     {
-        Provider = new EmbeddingModelProviderDefinition()
-        {
-            Name = EmbeddingModelProvider.Gemini,
-            Configuration = []
-        },
-        Model = "gemini-embedding-exp-03-07",
-        Dimensions = 3072,
-        Api = new()
-        {
-            Endpoint = new Uri("https://fake-uri.com")
-        }
+        Id = "fake-collection",
+        Embedding = EmbeddingModelDefinitionFactory.Create(),
+        Store = VectorStoreDefinitionFactory.Create()
+    };
+
+    internal static EquatableDictionary<string, VectorCollectionDefinition> CreateCollection() => new()
+    {
+        { "fake-collection", Create() }
     };
 
 }
