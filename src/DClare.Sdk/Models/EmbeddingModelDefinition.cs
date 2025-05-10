@@ -48,11 +48,11 @@ public record EmbeddingModelDefinition
     public virtual uint Dimensions { get; set; }
 
     /// <summary>
-    /// Gets or sets the maximum number of tokens, if any, that can be processed by the embedding model in a single input.
+    /// Gets or sets the maximum number of tokens that can be processed by the embedding model in a single input.
     /// </summary>
-    [Description("The maximum number of tokens, if any, that can be processed by the embedding model in a single input.")]
+    [Description("The maximum number of tokens that can be processed by the embedding model in a single input.")]
     [Required, Range(1, int.MaxValue)]
-    [DataMember(Name = "maxToken", Order = 4), JsonPropertyName("maxToken"), JsonPropertyOrder(4), YamlMember(Alias = "maxToken", Order = 4)]
+    [DataMember(Name = "maxTokens", Order = 4), JsonPropertyName("maxTokens"), JsonPropertyOrder(4), YamlMember(Alias = "maxTokens", Order = 4)]
     public virtual uint MaxTokens { get; set; }
 
     /// <summary>
